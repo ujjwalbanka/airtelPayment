@@ -1,0 +1,10 @@
+{
+    "name": "ujjwal/airtel-payment",
+    "authors": [
+        {
+            "name": "Ujjwal",
+            "email": "ujjwal.banka@sapient.com"
+        }
+    ],
+    "require": {}
+}
