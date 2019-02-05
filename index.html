@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Airtel payment</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <div class="alert alert-success meesageText d-none">
+        
+    </div>
+    <div class="container">
+        <h1 class="pb-4">Airtel payment</h1>
+        <div class="card bg-light mb-3 float-right" style="max-width: 18rem;">
+            <div class="card-header">Monthly Card Limit</div>
+            <div class="card-body">
+                <p class="card-text cardLimit">425</p>
+            </div>
+        </div>
+        <form action="" id="form" class="row">
+            <div class="form-group col-6">
+                <label for="befName">Beneficiary Name</label>
+                <input class="form-control" type="text" name="befName" id="befName" placeholder=""><br>
+            </div>
+            
+            <div class="form-group col-6">
+                <label for="beneMobNo">Beneficiary Mobile number</label>
+                <input class="form-control" type="text" name="beneMobNo" id="beneMobNo" placeholder=""><br>
+            </div>
+            
+            <div class="form-group col-6">
+                <label for="bankName">Bank Name</label>
+                <input class="form-control" type="text" name="bankName" id="bankName" placeholder=""><br>
+            </div>
+
+            <div class="form-group col-6">
+                <label for="ifsc">IFSC code</label>
+                <input class="form-control" type="text" name="ifsc" id="ifsc" placeholder=""><br>
+                <span id="checkIfsc">Check IFSC code</span>
+            </div>
+
+            <div class="form-group col-6">
+                <label for="beneAccNo">Account Number</label>
+                <input class="form-control" type="text" name="beneAccNo" id="beneAccNo" placeholder=""><br>
+            </div>
+
+            <div class="form-group col-6">
+                <label for="rebeneAccNo">Re-enter account number</label>
+                <input class="form-control" type="text" name="rebeneAccNo" id="rebeneAccNo" placeholder=""><br>
+            </div>
+            
+            <div class="form-group col-6">
+                <label for="amount">Amount</label>
+                <input class="form-control" type="text" name="amount" id="amount" placeholder=""><br>
+            </div>
+
+            <div class="form-group col-6">
+                <label for="branchName">Branch Name</label>
+                <input class="form-control" type="text" name="branchName" id="branchName" placeholder=""><br>
+            </div>
+            
+            <div class="form-group col-6">
+                <label for="aadharCard">Aadhar card number</label>
+                <input class="form-control" type="text" name="aadharCard" id="aadharCard" placeholder=""><br>
+            </div>
+            
+            <div class="form-group col-6">
+                <label for="address">Address</label>
+                <input class="form-control" type="text" name="address" id="address" placeholder=""><br>
+            </div>
+
+            <div class="col-12">
+                <button type="button" class="btn btn-primary" name="submit" id="submit">Send</button>
+                <label id="info"></label>
+            </div>
+        </form>
+    </div>
+    
+    <!-- <script src="http://code.jquery.com/jquery-latest.min.js"></script> -->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="js.js"></script>
+  </body>
+</html>
