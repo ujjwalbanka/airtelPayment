@@ -1,6 +1,6 @@
 $(document).ready(function() {
     var sessionUserData = sessionStorage.getItem("user");
-    if(sessionUserData === null) window.location.href = 'http://www.oneindiawallet.com/page-login.html'
+    // if(sessionUserData === null) window.location.href = 'http://www.oneindiawallet.com/page-login.html'
     getCardLimit();
   var form = $("#form"),
     befName = $("#befName"),

@@ -65,6 +65,7 @@ function getLimit() {
 
 function checkIfsc($data) {
     $curl = curl_init();
+    var_dump($data);
     if ($data)
         curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($data));
     curl_setopt($curl, CURLOPT_URL, 'https://apbuat.airtelbank.com:5055/bankhealth/ifsccode');
