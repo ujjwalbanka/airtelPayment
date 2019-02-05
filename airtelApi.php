@@ -8,7 +8,6 @@ function impsTransaction($data) {
     $data->externalRefNo = "R".uniqid();
     $data->feSessionId = "F".uniqid();
     $data->partnerId = "1000011082";
-    $data->reference1 = "AGENTID1";
     $data->reference2 = (int) $data->beneMobNo;
     $data->ver = "1.0";
     $hash_data = $data->channel."#".$data->partnerId."#".$data->customerId."#".$data->amount."#".$data->ifsc."#".$data->beneAccNo."#7fabdc58";
@@ -30,7 +29,6 @@ function impsTransaction($data) {
     $result = curl_exec($curl);
 
     curl_close($curl);
-
     return $result;
 }
 

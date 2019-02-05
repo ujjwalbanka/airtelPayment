@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    var sessionUserData = sessionStorage.getItem("user");
+    if(sessionUserData === null) window.location.href = 'http://www.oneindiawallet.com/page-login.html'
     getCardLimit();
   var form = $("#form"),
     befName = $("#befName"),
@@ -20,10 +22,12 @@ $(document).ready(function() {
     submit.on("click", function(e) {
     e.preventDefault();
     if (true) {
+        var sessionData = sessionStorage.getItem("user");
+        const agentId = sessionData ? JSON.parse(sessionData).agent_id : null
         $.ajax({
         type: "POST",
         url: "payment.php",
-        data: form.serialize(),
+        data: agentId ? form.serialize()+'&reference1='+agentId + '&userId='+ JSON.parse(sessionData).id: form.serialize(),
         dataType: "json"
         }).done(function(data) {
         if (data.success) {
@@ -32,13 +36,18 @@ $(document).ready(function() {
             setTimeout(() => {
                 $(".meesageText").addClass("d-none");
             }, 5000);
+            $(".screen1").removeClass("d-none");
+            $(".screen2").addClass("d-none");
         } else {
             
         }
         });
     }
     });
-  
+    $("#nextScreen1").click(function () {
+        $(".screen1").addClass("d-none");
+        $(".screen2").removeClass("d-none");
+    });
     $("#checkIfsc").click(function () {
         $.ajax({
             type: "POST",
@@ -82,7 +91,6 @@ function getCardLimit() {
         url: "customerLimit.php",
         data: 'ifsc='+ $("#ifsc").val(),
     }).done(function(data) {
-        console.log(data);
         if (JSON.parse(data).success) {
         $(".cardLimit").html(JSON.parse(data).data.mpt);
         } else {
